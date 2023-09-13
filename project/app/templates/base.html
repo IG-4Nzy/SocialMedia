@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>Social Media Website</title>
+    <style>
+      /* Reset default browser styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Set background image */
+      body {
+        background-image: url("https://www.example.com/background-image.jpg");
+        background-size: cover;
+        background-position: center center;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Style for header */
+      header {
+        background-color: #ffffff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* Style for header logo */
+      header .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333333;
+        text-decoration: none;
+      }
+
+      /* Style for header navigation */
+      header nav {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Style for header navigation links */
+      header nav a {
+        margin-left: 20px;
+        color: #333333;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      /* Style for main content */
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      /* Style for sign in and sign up buttons */
+      .button {
+        background-color: #1877f2;
+        border: none;
+        color: #ffffff;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      /* Style for footer */
+      footer {
+        background-color: #333333;
+        padding: 20px;
+        color: #ffffff;
+        text-align: center;
+      }
+
+      /* Style for footer links */
+      footer a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">TwittoGram</a>
+    </header>
+    <main>
+      <h1>Welcome to TwittoGram</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac est vel ipsum lobortis consectetur. In hac habitasse platea dictumst. Nulla facilisi. Praesent sed malesuada ipsum. Duis commodo nisi eget lectus volutpat, vel blandit erat faucibus. Nam id augue sagittis, bibendum eros ac, malesuada mi. Vivamus auctor quam quis massa dictum bibendum. Vestibulum euismus non massa non pretium. Suspendisse auctor vel arcu vel rutrum. Nam eu semper metus. Donec sit amet felis vel ante venenatis viverra. Sed aliquet nibh et libero tristique, vel dignissim elit posuere. Duis viverra enim vel velit commodo, a suscipit sem gravida. Curabitur eu ligula libero. In hac habitasse platea dictumst.</p>
+      <div>
+      <a href="{% url 'signin' %}" class="button">Sign In</a>
+      <a href="{% url 'sign' %}" class="button">Sign Up</a>
+      </div>
+      </main>
+      <footer>
+      <p>© 2023 Social Media Website</p>
+      <nav>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
+      </nav>
+      </footer>
+      
+        </body>
+      </html>

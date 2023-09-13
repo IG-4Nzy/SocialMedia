@@ -1,0 +1,204 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Social Media Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333333;
+            margin: 0;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        
+
+        .profile-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: relative;
+            top: 30px;
+        }
+
+        nav {
+            background-color: #ffffff;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            margin: 0 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #c32aa3;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        section {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #333333;
+            margin-top: 0;
+        }
+
+        .post-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .post-card {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .post-card h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333333;
+            margin-top: 10px;
+        }
+
+        .post-card p {
+            font-size: 14px;
+            color: #666666;
+            margin-top: 5px;
+        }
+        .postimage{
+           max-width: 300px;
+           max-height: 200px;
+           min-width: 300px;
+           min-height: 200px;
+        }
+        .username {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333333;
+            margin-left: 10px;
+            position: relative;
+            top: 50px;
+            right: 40px;
+        }
+        .loginas{
+            position: relative;
+            top: 30px;
+            left: 30px;
+        }
+        .profile-image:hover{
+            
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SOCIAL MEDIA WEBSITE</h1>
+            <div class="profile">
+                <p class="loginas">Logged in as</p>
+                <p name="username"class="username">{{ user.username }}</p>
+                {% if pic %}
+                <a href="{% url 'profile' %}" class="profile-image-link"><img src="{{ pic.profilepicture.url }}" alt="Profile Photo" class="profile-image"></a>
+                {% else %}
+                    <img src="{% static 'img/avatar.jpg' %}" alt="Default Profile Photo" class="profile-image">
+                {% endif %}
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'userlist' %}">Friends</a></li>
+                <li><a href="{% url 'chat' %}">Messages</a></li>
+                <li><a href="{% url 'settings' %}">Settings</a></li>
+                <li><a href="{% url 'post' %}">New Post</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section class="posts">
+                <h2>Recent Posts</h2>
+                <div class="post-container">
+                    {% if c %}
+                        {% for post in c %}
+                            <div class="post-card">
+                                <img class="postimage" src="{{ post.post.url }}" alt="Post Image">
+                                <h3>{{ post.title }}</h3>
+                                <p class="uname">{{ post.user.username }}</p>
+                                <p class="content">{{ post.content }}</p>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No posts found.</p>
+                    {% endif %}
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

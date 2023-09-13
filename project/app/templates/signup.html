@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'E:\coding\Socialmedia\Social_Media\static\css\images\js\validate.js' %}"></script>
+    <title>login page</title>
+    <style>
+      .signinbtn{
+        position: relative;
+        top: 30px;
+      }
+    </style>
+  </head>
+<body>
+  <div class="heading">
+    <h1><center>SIGN UP</center></h1>
+  </div>
+  <div class="forms">
+
+  <form action="/signup"method="POST" onsubmit="return validate()">
+    {% csrf_token %}
+    <h3>{{key}}</h3>
+    <label for="">Username</label>
+    <input type="text" id="user" name="uname" placeholder="Create a Username(only Letters And Numbers)" required>
+    <br>
+    <label for="">First Name</label>
+    <input type="text" id="firstname" name="fname" placeholder="Enter Your First Name" required>
+    <br>
+    <label for="">Last Name</label>
+    <input type="text" id="lastname" name="lname" placeholder="Enter Your Last Name" required>
+    <br>
+    <label for="">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+    <br>
+    <label for="">Password</label>
+    <input type="password" id="pass1" name="pass1" placeholder="Create a Password" required>
+    <br>
+    <label for="">Confirm Password</label>
+    <input type="password" id="pass2" name="pass2" placeholder="Confirm Password" required>
+    <br>
+    <button type="submit" onclick='validate()'>SignUp</button>
+    <a class="signinbtn" href="{% url 'signin' %}">already have an account ? Signin</a>
+  </forms>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'E:\coding\Socialmedia\Social_Media\static\css\images\js\validate.js' %}"></script>
+    <title>login page</title>
+    <style>
+      .signupbtn{
+        position: relative;
+        top: 30px;
+      }
+    </style>
+  </head>
+<body>
+  <div class="heading">
+    <h1><center>SIGN IN</center></h1>
+  </div>
+  <div class="forms">
+
+  <form method="POST">
+    {% csrf_token %}
+    <h3>{{key}}</h3>
+    <label for="">Username</label>
+    <input type="text" id="user" name="username" placeholder="enter the username" required>
+    <br>
+    <label for="">Password</label>
+    <input type="password" id="pass1" name="pass1" placeholder="enter the Password" required>
+    <br>
+    <button type="submit" >SignIn</button>
+    <a class="signupbtn" href="{% url 'signup' %}">dont have an account ? Signup</a>
+  </forms>
+  
+</div>
+</body>
+</html>

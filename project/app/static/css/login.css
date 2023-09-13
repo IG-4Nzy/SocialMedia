@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+form{
+    border:3px solid #ffffff;
+}
+
+.forms{
+        width: 500px;
+        padding: 10% 0 0;
+        margin: auto;
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      }
+input{
+    font-family: "Lato", sans-serif;
+    background: #e7e4e4;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+button{
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #12bb5e;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #000000;
+    font-size: 14px;
+    cursor: pointer;
+}
+button:hover,button:active,button:focus {
+    background: #a1fcbc;
+  }
+.heading{
+    
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
+    0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 #ccc,
+    0 7px 0 #ccc, 0 8px 0 #ccc,
+    0 9px 0 #ccc, 0 10px 0 #ccc,
+    0 11px 0 #ccc, 0 12px 0 #ccc,
+    0 20px 30px rgba(0, 0, 0, 0.5);
+    
+}
+/* .signinbtn,.signupbtn{
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #12bb5e;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #000000;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    top: 100px;
+    height: 50px;
+} */

@@ -1,0 +1,54 @@
+<h1>Edit Profile</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Save</button>
+  <a href="{% url 'home' %}">HOME</a>
+</form>
+
+  <style>
+    form {
+        width: 50%;
+        margin: 0 auto;
+      }
+      
+      form label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      
+      form input[type="text"],
+      form input[type="email"],
+      form input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+      }
+      
+      /* Style the submit button */
+      form button[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      /* Style the form errors */
+      form .errorlist {
+        color: red;
+        margin-bottom: 20px;
+      }
+      
+      /* Style the form success message */
+      form .success-message {
+        color: green;
+        margin-bottom: 20px;
+      }
+  </style>

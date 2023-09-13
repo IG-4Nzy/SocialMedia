@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title>post</title>
+    <style>
+        /* reset styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* basic styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #ddd;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section {
+  flex: 1;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+input[type="submit"] {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title"><br>
+    <label for="content">Content:</label>
+    <textarea name="content" id="content"></textarea><br>
+    <label for="image">Image:</label>
+    <input type="file" name="post" id="image"><br>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
